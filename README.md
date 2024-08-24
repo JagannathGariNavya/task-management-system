@@ -1,13 +1,14 @@
-# task-management-system
+# Task Management System
+
 A Task Management System built with Node.js, Express, MongoDB, and JWT authentication. Users can create, assign, update, delete, and manage tasks with role-based access control.
 
 ## Features
 
-- *User Roles*: Admin, Task Creator, and Task Assignee.
-- *Task CRUD Operations*: Create, read, update, and delete tasks.
-- *Task Assignment*: Assign tasks to multiple users.
-- *JWT Authentication*: Secure routes with JWT tokens.
-- *Task Filters*: Filter tasks by status and priority.
+- **User Roles**: Admin, Task Creator, and Task Assignee.
+- **Task CRUD Operations**: Create, read, update, and delete tasks.
+- **Task Assignment**: Assign tasks to multiple users.
+- **JWT Authentication**: Secure routes with JWT tokens.
+- **Task Filters**: Filter tasks by status and priority.
   
 ## Prerequisites
 
@@ -16,28 +17,28 @@ A Task Management System built with Node.js, Express, MongoDB, and JWT authentic
 
 ## Installation
 
-1. *Clone the repository*:
-    bash
-    git clone https://github.com/JagannathGariNavya/task-management-system.git
+1. **Clone the repository**:
+    ```bash
+   https://github.com/JagannathGariNavya/task-management-system.git
     cd backend
-    
+    ```
 
-2. *Install dependencies*:
-    bash
+2. **Install dependencies**:
+    ```bash
     npm install
-    
+    ```
 
-3. *Configure Environment Variables*:
-    Create a .env file in the project root and add the following environment variables:
-    env
+3. **Configure Environment Variables**:
+    Create a `.env` file in the project root and add the following environment variables:
+    ```env
     MONGO_URI=mongodb+srv://jnavyan12:manage@cluster0.s5dmm.mongodb.net/
-    JWT_SECRET=navya123;
-    PORT=9000
+  JWT_SECRET=navya123;
+  PORT=9000
 
 4. **Start the server**:
-    bash
-    npm run start
-    
+    ```bash
+    npm run dev
+    ```
 
 ## API Routes
 
@@ -48,12 +49,12 @@ A Task Management System built with Node.js, Express, MongoDB, and JWT authentic
   Authenticate a user and retrieve a JWT token.
   
   **Request**:
-  json
+  ```json
   {
     "email": "user@example.com",
     "password": "password"
   }
- *Response*
+ **Response**
 
     {
     "token": "jwt_token"
@@ -62,14 +63,13 @@ A Task Management System built with Node.js, Express, MongoDB, and JWT authentic
 
  ## Register
 
-*Endpoint:* POST /api/auth/register
+**Endpoint:** `POST /api/auth/register`
 
-*Description:* Register a new user with name, email, and password.
+**Description:** Register a new user with name, email, and password.
 
-*Request:*
+**Request:**
 
      {
-  
   "email": "john@example.com",
   "username": "John Doe",
   "password": "password"
@@ -78,17 +78,17 @@ A Task Management System built with Node.js, Express, MongoDB, and JWT authentic
 
  ## Task Routes
 
-All task routes are protected by JWT, requiring the Authorization: Bearer <token> header.
+All task routes are protected by JWT, requiring the `Authorization: Bearer <token>` header.
 
 ### Create Task
 
-*Endpoint:* POST /api/tasks
+**Endpoint:** `POST /api/tasks`
 
-*Description:* Create a new task. Only the creator or admin can create tasks.
+**Description:** Create a new task. Only the creator or admin can create tasks.
 
-*Request:*
+**Request:**
 
-json
+```json
 {
   "title": "New Task",
   "description": "Task description",
@@ -109,7 +109,7 @@ json
 
 - **200 OK**
 
-  json
+  ```json
   {
     "_id": "task_id",
     "title": "Task 1",
@@ -123,13 +123,13 @@ json
   
   ### Update Task
 
-*Endpoint:* PUT /api/tasks/:id
+**Endpoint:** `PUT /api/tasks/:id`
 
-*Description:* Update task details. Only task creators or admins can update tasks.
+**Description:** Update task details. Only task creators or admins can update tasks.
 
-*Request:*
+**Request:**
 
-json
+```json
 {
   "title": "Updated Task",
   "description": "Updated description",
@@ -152,7 +152,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 - **200 OK**
 
-  json
+  ```json
   {
     "message": "Task deleted successfully"
   }
@@ -160,13 +160,13 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 # Assign Task to Users
 
-*Endpoint:* PUT /api/tasks/:id/assign
+**Endpoint:** `PUT /api/tasks/:id/assign`
 
-*Description:* Assign users to a task. Only task creators or admins can assign tasks.
+**Description:** Assign users to a task. Only task creators or admins can assign tasks.
 
-*Request:*
+**Request:**
 
-json
+```json
 {
   "assignedTo": ["user_id1", "user_id2"]
 }
@@ -178,7 +178,7 @@ All routes require authentication using JWT (JSON Web Token). The token must be 
 
 **Header Format:**
 
-http
+```http
 Authorization: Bearer <your_jwt_token>
 
 
@@ -187,9 +187,9 @@ Authorization: Bearer <your_jwt_token>
 
 The API returns the following HTTP status codes for error handling:
 
-- *400 Bad Request:* When an invalid request is made (e.g., invalid parameters).
+- **400 Bad Request:** When an invalid request is made (e.g., invalid parameters).
 
-  *Response Example:*
+  **Response Example:**
     
    - 400 Bad Request: When an invalid request is made (e.g., invalid parameters).
     401 Unauthorized: When the user is not authenticated or the token is invalid.
