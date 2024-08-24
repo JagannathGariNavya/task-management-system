@@ -80,7 +80,7 @@ A Task Management System built with Node.js, Express, MongoDB, and JWT authentic
 
 All task routes are protected by JWT, requiring the `Authorization: Bearer <token>` header.
 
-## Create Task
+### Create Task
 
 **Endpoint:** `POST /api/tasks`
 
@@ -99,7 +99,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 
 
-## Get Task by ID
+### Get Task by ID
 
 **Endpoint:** `GET /api/tasks/:id`
 
@@ -121,7 +121,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
   }
   
   
-  ## Update Task
+  ### Update Task
 
 **Endpoint:** `PUT /api/tasks/:id`
 
@@ -142,7 +142,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 All task routes are protected by JWT, requiring the `Authorization: Bearer <token>` header.
 
-## Delete Task
+### Delete Task
 
 **Endpoint:** `DELETE /api/tasks/:id`
 
@@ -196,6 +196,12 @@ The API returns the following HTTP status codes for error handling:
     403 Forbidden: When the user does not have permission to access the resource.
     404 Not Found: When the requested resource does not exist.
     500 Internal Server Error: When an unexpected error occurs on the server.
+
+
+
+
+
+
 ## Technology Stack
 Node.js: JavaScript runtime environment. <br/>
 Express.js: Web framework for Node.js. <br/>
