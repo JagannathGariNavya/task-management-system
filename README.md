@@ -88,7 +88,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 **Request:**
 
-```json
+json
 {
   "title": "New Task",
   "description": "Task description",
@@ -109,7 +109,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 - **200 OK**
 
-  ```json
+  json
   {
     "_id": "task_id",
     "title": "Task 1",
@@ -129,7 +129,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 **Request:**
 
-```json
+json
 {
   "title": "Updated Task",
   "description": "Updated description",
@@ -152,7 +152,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 - **200 OK**
 
-  ```json
+  json
   {
     "message": "Task deleted successfully"
   }
@@ -166,7 +166,7 @@ All task routes are protected by JWT, requiring the `Authorization: Bearer <toke
 
 **Request:**
 
-```json
+json
 {
   "assignedTo": ["user_id1", "user_id2"]
 }
@@ -178,7 +178,7 @@ All routes require authentication using JWT (JSON Web Token). The token must be 
 
 **Header Format:**
 
-```http
+http
 Authorization: Bearer <your_jwt_token>
 
 
@@ -196,11 +196,6 @@ The API returns the following HTTP status codes for error handling:
     403 Forbidden: When the user does not have permission to access the resource.
     404 Not Found: When the requested resource does not exist.
     500 Internal Server Error: When an unexpected error occurs on the server.
-
-
-
-
-
 
 ## Technology Stack
 Node.js: JavaScript runtime environment. <br/>
